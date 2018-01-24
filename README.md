@@ -18,8 +18,6 @@ catkin_make
 ```
 
 ## Usage
-In a terminal start gazebo
-=======
 * In another terminal start gazebo
 ```
 cd catkin_ws/src/ros_sitl
