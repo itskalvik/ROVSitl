@@ -4,16 +4,19 @@ Gazebo model of DeepBlue AUV.
 
 ## Setup
 * Install ROS Kinetic's  Desktop Install following this [tutorial](http://wiki.ros.org/kinetic/Installation/Ubuntu)
-* Download and setup ArduPilot for sitl following this [tutorial](http://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html)
-* Install [freebuoyancy_gazebo](https://github.com/bluerobotics/freebuoyancy_gazebo#install)
-* Install [ardupilopt_gazebo/add_link](https://github.com/patrickelectric/ardupilot_gazebo/tree/add_link#usage-)
-* Checkout add_link branch in ardupilot_gazebo with ```git checkout add_link```
-* Clone ros_sitl and run gazebo
+* Download and setup [ArduPilot](git@bitbucket.org:WSU_DeepBlue/ardupilot.git)
+* Install [freebuoyancy_gazebo](git@bitbucket.org:WSU_DeepBlue/freebuoyancy_gazebo.git)
+* Install [ardupilopt_gazebo/add_link](git@bitbucket.org:WSU_DeepBlue/ardupilot_gazebo.git)
+* Clone ros_sitl and start roscore
 ```
 git clone git@bitbucket.org:WSU_DeepBlue/ros_sitl.git
 cd ros_sitl
 source gazebo.sh
-gazebo worlds/underwater.world
+roscore
+```
+In another terminal start gazebo
+```
+rosrun gazebo_ros gazebo --verbose worlds/underwater.world
 ```
 * Start ardusub sitl in another terminal
 ```
