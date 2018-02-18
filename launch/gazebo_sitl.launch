@@ -9,4 +9,8 @@
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
   </include>
+
+  <include file="$(find ros_sitl)/launch/apm.launch">
+  </include>
+
 </launch>
