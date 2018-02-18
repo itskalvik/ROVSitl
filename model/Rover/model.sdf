@@ -1,0 +1,845 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='Rover'>
+    <link name='chassis'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <mass>11</mass>
+        <inertia>
+          <ixx>0.16</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.16</iyy>
+          <iyz>0</iyz>
+          <izz>0.16</izz>
+        </inertia>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+      </inertial>
+      <visual name='chassis_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/chassis.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 0 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
+    </link>
+
+    <link name='prop1'>
+      <pose frame=''>-0.122 0.248 0.392 -2.356 -0 0.785</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_cw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster1' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop1</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='prop2'>
+      <pose frame=''>0.121 0.248 0.392 -2.356 -0 -0.785</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_ccw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster2' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop2</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='prop3'>
+      <pose frame=''>0.121 0.006 0.392 -2.356 -0 -2.356</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop3_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_cw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster3' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop3</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='prop4'>
+      <pose frame=''>-0.122 0.006 0.392 -2.356 -0 2.356</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop4_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_ccw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster4' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop4</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='prop5'>
+      <pose frame=''>0.121 0.248 -0.307 0.785 -0 2.356</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop5_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_cw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster5' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop5</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='prop6'>
+      <pose frame=''>-0.122 0.248 -0.307 0.785 0 -2.356</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop6_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_ccw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster6' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop6</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='prop7'>
+      <pose frame=''>-0.122 0.006 -0.307 0.785 0 -0.785</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop7_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_cw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster7' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop7</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='prop8'>
+      <pose frame=''>0.121 0.006 -0.307 0.785 0 0.785</pose>
+      <inertial>
+        <mass>1e-10</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name='prop8_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Rover/meshes/prop_ccw.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thruster8' type='revolute'>
+      <parent>chassis</parent>
+      <child>prop8</child>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop1_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>prop1</link_name>
+    </plugin>
+
+    <plugin name='prop1_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>prop1</link_name>
+    </plugin>
+
+    <plugin name='prop1_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>prop1</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop2_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>prop2</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>prop2</link_name>
+    </plugin>
+
+    <plugin name='prop2_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>prop2</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop3_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>prop3</link_name>
+    </plugin>
+
+    <plugin name='prop3_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>prop3</link_name>
+    </plugin>
+
+    <plugin name='prop3_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>prop3</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop4_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>prop4</link_name>
+    </plugin>
+
+    <plugin name='prop4_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>prop4</link_name>
+    </plugin>
+
+    <plugin name='prop4_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>prop4</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop5_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>prop5</link_name>
+    </plugin>
+
+    <plugin name='prop5_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>prop5</link_name>
+    </plugin>
+
+    <plugin name='prop5_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>prop5</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop6_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>prop6</link_name>
+    </plugin>
+
+    <plugin name='prop6_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>prop6</link_name>
+    </plugin>
+
+    <plugin name='prop6_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>prop6</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop7_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013001 0.024612 0.0054</cp>
+      <forward>-0.17746 -0.10243 -0.0575</forward>
+      <upward>0.07209 0.02292 -0.10235</upward>
+      <link_name>prop7</link_name>
+    </plugin>
+
+    <plugin name='prop7_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.027815 -0.001047 0.0054</cp>
+      <forward>0.00002 0.2049 -0.0575</forward>
+      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <link_name>prop7</link_name>
+    </plugin>
+
+    <plugin name='prop7_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.014814 -0.023565 0.0054</cp>
+      <forward>0.17744 -0.10247 -0.05749</forward>
+      <upward>-0.0559 0.05097 -0.10235</upward>
+      <link_name>prop7</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name='prop8_blade_1' filename='libLiftDragPlugin.so'>
+      <a0>0.08727</a0>
+      <cla>5.418</cla>
+      <cda>0.0</cda>
+      <alpha_stall>0.3368</alpha_stall>
+      <cla_stall>0.0</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.015 0.024 0.005</cp>
+      <forward>0.04 0.021 -0.023</forward>
+      <upward>-0.019 -0.017 -0.034</upward>
+      <link_name>prop8</link_name>
+    </plugin>
+
+    <plugin name='prop8_blade_2' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>-0.013 -0.025 0.005</cp>
+      <forward>-0.038 0.023 -0.023</forward>
+      <upward>0.024 -0.008 -0.034</upward>
+      <link_name>prop8</link_name>
+    </plugin>
+
+    <plugin name='prop8_blade_3' filename='libLiftDragPlugin.so'>
+      <a0>0.4</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <alpha_stall>1.5</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <area>0.002</area>
+      <air_density>1000</air_density>
+
+      <cp>0.028 0.001 0.005</cp>
+      <forward>-0.001 -0.045 -0.023</forward>
+      <upward>-0.005 0.025 -0.034</upward>
+      <link_name>prop8</link_name>
+    </plugin>
+
+    <!-- ################################################################ -->
+
+    <plugin name="ArduPilotPlugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
+      <imuName>Rover::chassis::imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+
+      <!--
+        incoming control command [0, 1]
+        so offset it by -0.5 to get [-0.5, 0.5].
+        multiplier = 102
+        Positive thrust = 51
+        Negative thrust = -41
+      -->
+        <control channel="0">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster1</jointName>
+          <multiplier>200</multiplier>
+        </control>
+
+        <control channel="1">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster2</jointName>
+          <multiplier>200</multiplier>
+        </control>
+
+        <control channel="2">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster3</jointName>
+          <multiplier>200</multiplier>
+        </control>
+
+        <control channel="3">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster4</jointName>
+          <multiplier>200</multiplier>
+        </control>
+
+
+        <control channel="4">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster5</jointName>
+          <multiplier>200</multiplier>
+        </control>
+
+        <control channel="5">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster6</jointName>
+          <multiplier>200</multiplier>
+        </control>
+
+        <control channel="6">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster7</jointName>
+          <multiplier>200</multiplier>
+        </control>
+
+        <control channel="7">
+          <type>VELOCITY</type>
+          <offset>-0.5</offset>
+          <p_gain>1</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>51</cmd_max>
+          <cmd_min>-40</cmd_min>
+          <jointName>Rover::thruster8</jointName>
+          <multiplier>200</multiplier>
+        </control>
+    </plugin>
+
+    <plugin name='freebuoyancy_gazebo' filename='libfreebuoyancy_gazebo.so'>
+      <descriptionParam>robot_description</descriptionParam>
+      <fluidTopic>current</fluidTopic>
+      <alwaysOn>true</alwaysOn>
+      <surface>0 0 0</surface>
+      <updateRate>.001</updateRate>
+      <link name='chassis'>
+        <buoyancy>
+          <compensation>1.01</compensation>
+          <origin xyz='0.000562 0.227 0.0'/>
+        </buoyancy>
+      </link>
+    </plugin>
+
+    <static>0</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>
