@@ -1,13 +1,131 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="underwater">
+
+  <scene>
+    <ambient>0.01 0.01 0.01 1.0</ambient>
+    <sky>
+      <clouds>
+        <speed>12</speed>
+      </clouds>
+    </sky>
+    <shadows>1</shadows>
+  </scene>
+
+  <!-- Global light source -->
   <include>
     <uri>model://sun</uri>
   </include>
+
+  <model name="seabed">
+    <static>true</static>
+    <link name="seabed_link">
+
+    <visual name="surface">
+      <cast_shadows>false</cast_shadows>
+      <pose>0 0 -5 0 0 0</pose>
+      <geometry>
+        <box>
+          <size>60 60 10</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://Rover/materials/scripts/water.material</uri>
+          <name>StaticDeepWater</name>
+        </script>
+      </material>
+    </visual>
+
+    <visual name="visual_sideA">
+      <pose>30 0 -5 0 0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <geometry>
+        <box>
+          <size>0.1 60 20</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/BlueTransparent</name>
+        </script>
+      </material>
+    </visual>
+
+    <visual name="visual_sideB">
+      <pose>-30 0 -5 0 0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <geometry>
+        <box>
+          <size>0.1 60 20</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/BlueTransparent</name>
+        </script>
+      </material>
+    </visual>
+
+    <visual name="visual_sideC">
+      <pose>0 30 -5 0 0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <geometry>
+        <box>
+          <size>60 0.1 20</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/BlueTransparent</name>
+        </script>
+      </material>
+    </visual>
+
+    <visual name="visual_sideD">
+      <pose>0 -30 -5 0 0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <geometry>
+        <box>
+          <size>60 0.1 20</size>
+        </box>
+      </geometry>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/BlueTransparent</name>
+        </script>
+      </material>
+    </visual>
+
+    <visual name="seafloor">
+      <pose>0 0 -5 0 0 0</pose>
+      <geometry>
+        <mesh><uri>model://Rover/meshes/seabed.stl</uri><scale>1 1 1</scale></mesh>
+      </geometry>
+      <material>
+        <script>
+          <uri>model://Rover/materials/scripts/sand.material</uri>
+          <name>SandAndStones</name>
+        </script>
+      </material>
+    </visual>
+    <collision name="seafloor">
+      <pose>0 0 -5 0 0 0</pose>
+      <geometry>
+        <mesh><uri>model://Rover/meshes/seabed.stl</uri><scale>1 1 1</scale></mesh>
+      </geometry>
+    </collision>
+    </link>
+  </model>
 
   <include>
     <uri>model://Rover</uri>
     <pose>0 0 -0.25 0 1.5708 0</pose>
   </include>
+
   </world>
 </sdf>
