@@ -12,5 +12,4 @@
 
 <!--  <include file="$(find ros_sitl)/launch/apm.launch">
 </include> -->
-
 </launch>

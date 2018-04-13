@@ -17,11 +17,5 @@ unset OGRE_RESOURCE_PATH
 source /usr/share/gazebo/setup.sh
 
 # Update variables
-export GAZEBO_MODEL_PATH=`pwd`/model:${GAZEBO_MODEL_PATH}
-export GAZEBO_RESOURCE_PATH=`pwd`/worlds:${GAZEBO_RESOURCE_PATH}
-
-# Print new variables
-echo "GAZEBO_MODEL_PATH    =" ${GAZEBO_MODEL_PATH}
-echo "GAZEBO_RESOURCE_PATH =" ${GAZEBO_RESOURCE_PATH}
-
-echo "`tput bold`Done! `tput sgr0`"
+export GAZEBO_MODEL_PATH=/home/kalvik/catkin_ws/src/ros_sitl/model:${GAZEBO_MODEL_PATH}
+export GAZEBO_RESOURCE_PATH=/home/kalvik/catkin_ws/src/ros_sitl/worlds:${GAZEBO_RESOURCE_PATH}
