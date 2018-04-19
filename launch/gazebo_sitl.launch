@@ -10,6 +10,6 @@
     <arg name="debug" value="false"/>
   </include>
 
-<!--  <include file="$(find ros_sitl)/launch/apm.launch">
-</include> -->
+  <include file="$(find ros_sitl)/launch/apm.launch"/>
+  <include file="$(find ros_sitl)/launch/ardupilot_sitl.launch"/>
 </launch>

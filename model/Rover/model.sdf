@@ -2,18 +2,17 @@
 <sdf version='1.6'>
   <model name='Rover'>
     <link name='chassis'>
-      <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
+        <pose>0.000808 0.117156 0.040903 0 0 0</pose>
         <mass>11</mass>
         <inertia>
-          <ixx>0.16</ixx>
+          <ixx>0</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.16</iyy>
+          <iyy>0</iyy>
           <iyz>0</iyz>
-          <izz>0.16</izz>
+          <izz>0</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
       <visual name='chassis_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -34,7 +33,7 @@
         </geometry>
       </collision>
       <sensor name="imu_sensor" type="imu">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.000808 0.117156 0.040903 0 0 0</pose>
         <always_on>1</always_on>
         <update_rate>1000.0</update_rate>
       </sensor>
@@ -326,403 +325,307 @@
       </axis>
     </joint>
 
-    <!-- ################################################################ -->
+    <!-- ############################## CW ############################## -->
 
     <plugin name='prop1_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.013001 0.024612 0.0054</cp>
-      <forward>-0.17746 -0.10243 -0.0575</forward>
-      <upward>0.07209 0.02292 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop1</link_name>
     </plugin>
 
     <plugin name='prop1_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>0.027815 -0.001047 0.0054</cp>
-      <forward>0.00002 0.2049 -0.0575</forward>
-      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop1</link_name>
     </plugin>
 
-    <plugin name='prop1_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>-0.014814 -0.023565 0.0054</cp>
-      <forward>0.17744 -0.10247 -0.05749</forward>
-      <upward>-0.0559 0.05097 -0.10235</upward>
-      <link_name>prop1</link_name>
-    </plugin>
-
-    <!-- ################################################################ -->
+    <!-- ############################## CCW ############################## -->
 
     <plugin name='prop2_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.015 0.024 0.005</cp>
-      <forward>0.04 0.021 -0.023</forward>
-      <upward>-0.019 -0.017 -0.034</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop2</link_name>
     </plugin>
 
     <plugin name='prop2_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.013 -0.025 0.005</cp>
-      <forward>-0.038 0.023 -0.023</forward>
-      <upward>0.024 -0.008 -0.034</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop2</link_name>
     </plugin>
 
-    <plugin name='prop2_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>0.028 0.001 0.005</cp>
-      <forward>-0.001 -0.045 -0.023</forward>
-      <upward>-0.005 0.025 -0.034</upward>
-      <link_name>prop2</link_name>
-    </plugin>
-
-    <!-- ################################################################ -->
+    <!-- ############################## CW ############################## -->
 
     <plugin name='prop3_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.013001 0.024612 0.0054</cp>
-      <forward>-0.17746 -0.10243 -0.0575</forward>
-      <upward>0.07209 0.02292 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop3</link_name>
     </plugin>
 
     <plugin name='prop3_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>0.027815 -0.001047 0.0054</cp>
-      <forward>0.00002 0.2049 -0.0575</forward>
-      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop3</link_name>
     </plugin>
 
-    <plugin name='prop3_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>-0.014814 -0.023565 0.0054</cp>
-      <forward>0.17744 -0.10247 -0.05749</forward>
-      <upward>-0.0559 0.05097 -0.10235</upward>
-      <link_name>prop3</link_name>
-    </plugin>
-
-    <!-- ################################################################ -->
+    <!-- ############################## CCW ############################## -->
 
     <plugin name='prop4_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.015 0.024 0.005</cp>
-      <forward>0.04 0.021 -0.023</forward>
-      <upward>-0.019 -0.017 -0.034</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop4</link_name>
     </plugin>
 
     <plugin name='prop4_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.013 -0.025 0.005</cp>
-      <forward>-0.038 0.023 -0.023</forward>
-      <upward>0.024 -0.008 -0.034</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop4</link_name>
     </plugin>
 
-    <plugin name='prop4_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>0.028 0.001 0.005</cp>
-      <forward>-0.001 -0.045 -0.023</forward>
-      <upward>-0.005 0.025 -0.034</upward>
-      <link_name>prop4</link_name>
-    </plugin>
-
-    <!-- ################################################################ -->
+    <!-- ############################## CW ############################## -->
 
     <plugin name='prop5_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.013001 0.024612 0.0054</cp>
-      <forward>-0.17746 -0.10243 -0.0575</forward>
-      <upward>0.07209 0.02292 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop5</link_name>
     </plugin>
 
     <plugin name='prop5_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>0.027815 -0.001047 0.0054</cp>
-      <forward>0.00002 0.2049 -0.0575</forward>
-      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop5</link_name>
     </plugin>
 
-    <plugin name='prop5_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>-0.014814 -0.023565 0.0054</cp>
-      <forward>0.17744 -0.10247 -0.05749</forward>
-      <upward>-0.0559 0.05097 -0.10235</upward>
-      <link_name>prop5</link_name>
-    </plugin>
-
-    <!-- ################################################################ -->
+    <!-- ############################## CCW ############################## -->
 
     <plugin name='prop6_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.015 0.024 0.005</cp>
-      <forward>0.04 0.021 -0.023</forward>
-      <upward>-0.019 -0.017 -0.034</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop6</link_name>
     </plugin>
 
     <plugin name='prop6_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.013 -0.025 0.005</cp>
-      <forward>-0.038 0.023 -0.023</forward>
-      <upward>0.024 -0.008 -0.034</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop6</link_name>
     </plugin>
 
-    <plugin name='prop6_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>0.028 0.001 0.005</cp>
-      <forward>-0.001 -0.045 -0.023</forward>
-      <upward>-0.005 0.025 -0.034</upward>
-      <link_name>prop6</link_name>
-    </plugin>
-
-    <!-- ################################################################ -->
+    <!-- ############################## CW ############################## -->
 
     <plugin name='prop7_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.013001 0.024612 0.0054</cp>
-      <forward>-0.17746 -0.10243 -0.0575</forward>
-      <upward>0.07209 0.02292 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop7</link_name>
     </plugin>
 
     <plugin name='prop7_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>0.027815 -0.001047 0.0054</cp>
-      <forward>0.00002 0.2049 -0.0575</forward>
-      <upward>-0.01619 -0.07389 -0.10235</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop7</link_name>
     </plugin>
 
-    <plugin name='prop7_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>-0.014814 -0.023565 0.0054</cp>
-      <forward>0.17744 -0.10247 -0.05749</forward>
-      <upward>-0.0559 0.05097 -0.10235</upward>
-      <link_name>prop7</link_name>
-    </plugin>
-
-    <!-- ################################################################ -->
+    <!-- ############################## CCW ############################## -->
 
     <plugin name='prop8_blade_1' filename='libLiftDragPlugin.so'>
-      <a0>0.08727</a0>
-      <cla>5.418</cla>
-      <cda>0.0</cda>
-      <alpha_stall>0.3368</alpha_stall>
-      <cla_stall>0.0</cla_stall>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
+      <cma_stall>0.0</cma_stall>
 
-      <cp>-0.015 0.024 0.005</cp>
-      <forward>0.04 0.021 -0.023</forward>
-      <upward>-0.019 -0.017 -0.034</upward>
+      <area>0.2</area>
+      <air_density>1000</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop8</link_name>
     </plugin>
 
     <plugin name='prop8_blade_2' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>0.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+
+      <area>0.2</area>
       <air_density>1000</air_density>
-
-      <cp>-0.013 -0.025 0.005</cp>
-      <forward>-0.038 0.023 -0.023</forward>
-      <upward>0.024 -0.008 -0.034</upward>
-      <link_name>prop8</link_name>
-    </plugin>
-
-    <plugin name='prop8_blade_3' filename='libLiftDragPlugin.so'>
-      <a0>0.4</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <alpha_stall>1.5</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <area>0.002</area>
-      <air_density>1000</air_density>
-
-      <cp>0.028 0.001 0.005</cp>
-      <forward>-0.001 -0.045 -0.023</forward>
-      <upward>-0.005 0.025 -0.034</upward>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
       <link_name>prop8</link_name>
     </plugin>
 
@@ -865,7 +768,7 @@
       <link name='chassis'>
         <buoyancy>
           <compensation>1.01</compensation>
-          <origin xyz='0.000562 0.227 0.0'/>
+          <origin xyz='0.000808 0.234312 0.040903'/>
         </buoyancy>
       </link>
     </plugin>
